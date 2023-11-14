@@ -9,17 +9,18 @@ import { DateTimeInputProps } from "sanity";
 
 const builder = imageUrlBuilder(client);
 
-function urlFor({ source }: { source: SanityImageSource }) {
-  return builder.image(source).url();
+const mainImageUrl = (mainImage: any) => {
+  return builder.image(mainImage.asset._ref).width(800).format("webp").height(800).url();
 }
 
-const PortableTextComponents = ({ content, description, publishedAt }: {content: any, description: string, publishedAt: Date}) => {
+const PortableTextComponents = ({ content, description, publishedAt, mainImage }: {content: any, description: string, publishedAt: Date, mainImage: any}) => {
   const publishedDate = format(new Date(publishedAt), "do LLLL yyyy");
   
   return (
     <>
-    {description && <p className="mb-2 mt-3 text-lg leading-7 text-gray-600">{description}</p>}
+    {description && <p className="mb-4 mt-3 text-lg leading-7 text-gray-600">{description}</p>}
     {publishedAt && <p className="text-gray-500">{publishedDate}</p>}
+    {mainImage && <Image src={mainImageUrl(mainImage)} width={800} height={800} alt={mainImage?.alt || "Descriptive text for image"} className="bg-gray-50 object-cover rounded-2xl aspect-video mt-10 mb-10" />}
       <PortableText
         value={content}
         components={{
@@ -37,10 +38,10 @@ const PortableTextComponents = ({ content, description, publishedAt }: {content:
                       .format("webp")
                       .height(800)
                       .url()}
-                    width={500}
-                    height={500}
+                    width={800}
+                    height={800}
                     alt={value?.alt || "Descriptive text for image"} // Ensure alt text is descriptive for SEO
-                    className="bg-gray-50 object-cover rounded-2xl" // 'aspect-video' removed since width and height are set
+                    className="bg-gray-50 object-cover rounded-2xl aspect-video" // 'aspect-video' removed since width and height are set
                   />
                   {value.caption && (
                     <figcaption className="mt-4 text-center text-sm leading-6 text-gray-500">
