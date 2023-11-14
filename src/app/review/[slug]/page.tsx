@@ -1,5 +1,6 @@
 import { PortableText } from "@portabletext/react";
 import { fetchReviewsPath, fetchReview } from "../../../../sanity/lib/api";
+import FullReview from "@/app/components/FullReview";
 
 
 export async function generateStaticParams() {
@@ -17,10 +18,7 @@ export default async function Review({ params }: { params: { slug: string }}) {
 
   return (
     <div>
-      <h1 className="text-black">Review: {review.title}</h1>
-      <PortableText 
-        value={review.body}
-      />
+      <FullReview review={review} />
     </div>
   )
 }

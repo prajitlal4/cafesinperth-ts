@@ -34,7 +34,7 @@ export default function FeaturedReview({review} : { review: FeaturedReviewPost})
             </a>
           </h3>
           <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-            {review.bodyText}
+            {review.description}
           </p>
         </div>
         <div className="relative mt-8 flex items-center gap-x-4">
@@ -47,9 +47,7 @@ export default function FeaturedReview({review} : { review: FeaturedReviewPost})
           />
           <div className="text-sm leading-6">
             <p className="font-semibold text-gray-900">
-              <p>
-                {review.author.name}
-              </p>
+              {review.author.name}
             </p>
           </div>
         </div>

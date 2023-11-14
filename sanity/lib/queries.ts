@@ -14,13 +14,15 @@ export const getTopThreePosts = groq`*[_type == "post"] | order(_createdAt desc)
     "image": image.asset->url
   },
   location,
+  description,
   categories[]->{
     title
   },
   "imageUrl": mainImage.asset->url,
   "publishedAt": publishedAt,
-  "bodyText": body[style == "normal"].children[0].text
 }`;
 
 // getting single review
 export const getReview = groq`*[_type == "post" && slug.current == $slug][0]`;
+
+export const getAuthor = groq`*[_id == $ref][0]`;
