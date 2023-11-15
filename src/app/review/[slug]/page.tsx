@@ -19,8 +19,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string }}): Promise<Metadata> {
   const review = await fetchReview(params.slug);
   return {
-    title: review.seoTitle ?? "Example",
-    description: review.seoDescription
+    title: review.seoTitle ?? "Cafe Review",
+    description: review.seoDescription ?? "Review of a Cafe in Perth, Western Australia"
   };
 }
 

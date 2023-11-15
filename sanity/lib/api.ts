@@ -1,5 +1,5 @@
 import { createClient } from "@sanity/client"
-import { getReview, getAllPaths, getTopThreePosts } from './queries';
+import { getReview, getAllPaths, getTopThreePosts, getSiteMapInfo } from './queries';
 
 export const client = createClient({
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
@@ -36,4 +36,9 @@ export const fetchReviewsPath = async () => {
 export const fetchTop3ReviewsPath = async () => {
   const featuredReviews: FeaturedReviewPost[] = await client.fetch(getTopThreePosts, { cache: 'force-cache'});
   return featuredReviews;
+}
+
+export const fetchSiteMapInfo = async () => {
+  const siteMapInfo = await client.fetch(getSiteMapInfo, { cache: 'force-cache'});
+  return siteMapInfo;
 }

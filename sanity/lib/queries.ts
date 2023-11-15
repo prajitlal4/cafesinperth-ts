@@ -42,3 +42,9 @@ export const getReview = groq`*[_type == "post" && slug.current == $slug][0] {
 }`;
 
 export const getAuthor = groq`*[_id == $ref][0]`;
+
+export const getSiteMapInfo = groq`*[_type == "post"]{
+  "slug": slug.current,
+  _updatedAt,
+  _createdAt
+}`;
