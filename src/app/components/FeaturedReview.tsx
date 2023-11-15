@@ -1,6 +1,7 @@
 import { format } from "date-fns";
 import { FeaturedReviewPost } from "../../../sanity/lib/api";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function FeaturedReview({review} : { review: FeaturedReviewPost}) {
   const publishedDate = format(new Date(review.publishedAt), "do LLLL yyyy");
@@ -28,10 +29,10 @@ export default function FeaturedReview({review} : { review: FeaturedReviewPost})
         </div>
         <div className="group relative">
           <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-            <a href={"review/" + review.slug}>
+            <Link href={`review/${review.slug}`}>
               <span className="absolute inset-0" />
               {review.title}
-            </a>
+            </Link>
           </h3>
           <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
             {review.description}
