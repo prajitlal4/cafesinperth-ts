@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -20,7 +21,13 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <Link href="/" className="-m-1.5 p-1.5">
           <span className="sr-only">Your Company</span>
-          <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+          <Image 
+            className="h-8 w-auto" 
+            src="https://cafesinperth.syd1.cdn.digitaloceanspaces.com/logo.png" 
+            alt="Cafes in Perth Logo"
+            height={800}
+            width={800} 
+          />
         </Link>
         <div className="flex lg:hidden">
           <button

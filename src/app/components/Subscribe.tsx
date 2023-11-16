@@ -12,7 +12,7 @@ export default function Subscribe() {
             Join our weekly newsletter and never miss out on the latest and
             greatest in Perth&apos;s cafe scene.
           </p>
-          <form name="subscribe" className="mx-auto mt-10 flex max-w-md gap-x-4" method="POST" data-netlify="true">
+          <form name="subscribe" id="subscribe" className="mx-auto mt-10 flex max-w-md gap-x-4" method="POST" data-netlify="true">
             <label htmlFor="email-address" className="sr-only">
               Email address
             </label>

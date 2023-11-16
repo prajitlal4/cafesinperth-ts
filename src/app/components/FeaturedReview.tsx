@@ -23,7 +23,7 @@ export default function FeaturedReview({review} : { review: FeaturedReviewPost})
           <p className="text-gray-500">
             {publishedDate}
           </p>
-          <p className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+          <p className="relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
             {review.location}
           </p>
         </div>

@@ -4,6 +4,7 @@ import Featured from './components/FeaturedSection'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { Metadata } from 'next';
+import HomeComponent from './components/Home';
 
 export const metadata: Metadata = {
   title: 'Cafes in Perth',
@@ -17,6 +18,7 @@ export default async function Home() {
   return (
     <div>
       <Navbar />
+      <HomeComponent />
       <Featured reviews={top3Reviews} />
       <Subscribe />
       <Footer />

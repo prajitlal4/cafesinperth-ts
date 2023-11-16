@@ -6,7 +6,6 @@ const WEBSITE_URL = process.env.SITE_URL || 'https://cafesinperth.com'
 type changeFrequency = 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  console.log('generating sitemap')
   const allPosts = await fetchSiteMapInfo()
 
   console.log('allPosts', allPosts)

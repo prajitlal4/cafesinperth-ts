@@ -8,6 +8,12 @@ const nextConfig = {
         port: '',
         pathname: '**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cafesinperth.syd1.cdn.digitaloceanspaces.com',
+        port: '',
+        pathname: '**',
+      }
     ],
   },
 }

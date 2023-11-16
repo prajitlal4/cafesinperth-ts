@@ -1,4 +1,3 @@
-import { PortableText } from "@portabletext/react";
 import { fetchReviewsPath, fetchReview } from "../../../../sanity/lib/api";
 import FullReview from "@/app/components/FullReview";
 import Navbar from "@/app/components/Navbar";
