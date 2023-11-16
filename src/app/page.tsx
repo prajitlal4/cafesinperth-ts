@@ -14,13 +14,15 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const top3Reviews = await fetchTop3ReviewsPath();
+  const title = "Stay in the Loop with Perth's Best Cafes."
+  const description = "Join our weekly newsletter and never miss out on the latest and greatest in Perth's cafe scene."
 
   return (
     <div>
       <Navbar />
       <HomeComponent />
       <Featured reviews={top3Reviews} />
-      <Subscribe />
+      <Subscribe title={title} description={description}/>
       <Footer />
     </div>
   )

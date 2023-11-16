@@ -3,6 +3,7 @@ import FullReview from "@/app/components/FullReview";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import { Metadata } from "next";
+import Subscribe from "@/app/components/Subscribe";
 
 
 export async function generateStaticParams() {
@@ -25,12 +26,14 @@ export async function generateMetadata({ params }: { params: { slug: string }}):
 
 export default async function Review({ params }: { params: { slug: string }}) {
   const review = await fetchReview(params.slug);
-  console.log(review);
+  const title = "Love this article? Subscribe to our newsletter!";
+  const description ="Sign up to our weekly digests to help soothe your coffee cravings.";
 
   return (
     <div>
       <Navbar />
       <FullReview review={review} />
+      <Subscribe title={title} description={description} />
       <Footer />
     </div>
   )
