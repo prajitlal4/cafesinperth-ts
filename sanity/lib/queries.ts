@@ -24,6 +24,7 @@ export const getTopThreePosts = groq`*[_type == "post"] | order(_createdAt desc)
 
 // getting single review
 export const getReview = groq`*[_type == "post" && slug.current == $slug][0] {
+  "slug": slug.current,
   title,
   author->{
     name,
@@ -38,7 +39,7 @@ export const getReview = groq`*[_type == "post" && slug.current == $slug][0] {
   "publishedAt": publishedAt,
   body,
   seoTitle,
-  seoDescription
+  seoDescription,
 }`;
 
 export const getAuthor = groq`*[_id == $ref][0]`;
