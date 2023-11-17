@@ -1,10 +1,11 @@
-import { fetchTop3ReviewsPath } from '../../sanity/lib/api';
-import Subscribe from './components/Subscribe'
-import Featured from './components/FeaturedSection'
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import { fetchTop3ReviewsPath } from '../../../sanity/lib/api';
+import Subscribe from '../components/Subscribe'
+import Featured from '../components/FeaturedSection'
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import { Metadata } from 'next';
-import HomeComponent from './components/Home';
+import HomeComponent from '../components/Home';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Cafes in Perth',
@@ -20,8 +21,7 @@ export default async function Home() {
   return (
     <div>
       <Navbar />
-      <HomeComponent />
-      <Featured reviews={top3Reviews} showAll={true} />
+      <Featured reviews={top3Reviews} showAll={false} />
       <Subscribe title={title} description={description}/>
       <Footer />
     </div>

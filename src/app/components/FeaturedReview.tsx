@@ -7,7 +7,7 @@ export default function FeaturedReview({review} : { review: FeaturedReviewPost})
   const publishedDate = format(new Date(review.publishedAt), "do LLLL yyyy");
 
   return (
-    <article className="flex flex-col items-start justify-between">
+    <article className="flex flex-col items-start justify-between outline outline-gray-200 rounded-2xl p-3">
       <div className="relative w-full">
         <Image
           src={review.imageUrl}
