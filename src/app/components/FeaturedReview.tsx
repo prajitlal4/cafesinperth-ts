@@ -7,7 +7,7 @@ export default function FeaturedReview({review} : { review: FeaturedReviewPost})
   const publishedDate = format(new Date(review.publishedAt), "do LLLL yyyy");
 
   return (
-    <article className="flex flex-col items-start justify-between outline outline-gray-200 rounded-2xl p-3">
+    <article className="flex flex-col items-start justify-between outline outline-2 outline-gray-200 rounded-2xl p-3">
       <div className="relative w-full">
         <Image
           src={review.imageUrl}
@@ -47,7 +47,7 @@ export default function FeaturedReview({review} : { review: FeaturedReviewPost})
             className="h-10 w-10 rounded-full bg-gray-100"
           />
           <div className="text-sm leading-6">
-            <p className="font-semibold text-gray-900">
+            <p className=" text-gray-900">
               {review.author.name}
             </p>
           </div>

@@ -24,7 +24,7 @@ export default function Featured({
             <div className="flex flex-grow-1 ">
               <Link
                 href={`/review`}
-                className="inline-flex relative w-full items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-2xl text-black bg-gray-100 transition-colors duration-150 ease-in-out hover:bg-gray-200 outline-dashed outline-gray-200"
+                className="inline-flex relative w-full items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-2xl text-black bg-gray-100 transition-colors duration-150 ease-in-out hover:bg-gray-200 outline-dashed outline-2 outline-gray-200"
               >
                 See all reviews
               </Link>
