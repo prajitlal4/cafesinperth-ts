@@ -20,10 +20,10 @@ export default function Navbar() {
     <header className="sticky w-full bg-white shadow-sm top-0 z-50">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <Link href="/" className="-m-1.5 p-1.5">
-          <span className="sr-only">Your Company</span>
+          <span className="sr-only">Cafes in Perth</span>
           <Image 
-            className="h-8 w-auto" 
-            src="https://cafesinperth.syd1.cdn.digitaloceanspaces.com/logo.png" 
+            className="h-10 md:h-16 w-auto" 
+            src="https://cafesinperth.syd1.cdn.digitaloceanspaces.com/Capture.PNG" 
             alt="Cafes in Perth Logo"
             height={800}
             width={800} 
