@@ -1,11 +1,8 @@
 import { PortableText } from "@portabletext/react";
 import { client } from "../../sanity/lib/api";
-import { ImageUrlBuilder } from '@sanity/image-url/lib/types/builder';
 import imageUrlBuilder from '@sanity/image-url';
 import Image from "next/image";
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { format } from "date-fns";
-import { DateTimeInputProps } from "sanity";
 
 const builder = imageUrlBuilder(client);
 
@@ -13,14 +10,15 @@ const mainImageUrl = (mainImage: any) => {
   return builder.image(mainImage.asset._ref).width(800).format("webp").height(800).url();
 }
 
-const PortableTextComponents = ({ content, description, publishedAt, mainImage }: {content: any, description: string, publishedAt: Date, mainImage: any}) => {
+const PortableTextComponents = ({ content, description, publishedAt, mainImage, updatedAt, author }: {content: any, description: string, publishedAt: Date, mainImage: any, updatedAt: Date, author: any}) => {
   const publishedDate = format(new Date(publishedAt), "do LLLL yyyy");
+  const updatedDate = format(new Date(updatedAt), "do LLLL yyyy")
   
   return (
     <>
-    {description && <p className="mb-4 mt-3 text-md lg:text-lg leading-7 text-gray-900 font">{description}</p>}
-    {publishedAt && <p className="text-gray-500">{publishedDate}</p>}
-    {mainImage && <Image src={mainImageUrl(mainImage)} width={800} height={800} alt={mainImage?.alt || "Descriptive text for image"} className="bg-gray-50 object-cover rounded-2xl aspect-video mt-10 mb-10" />}
+      {description && <p className="mb-4 mt-3 text-md lg:text-lg leading-7 text-gray-900">{description}</p>}
+      {publishedAt && <p className="text-gray-500 font-light">{publishedDate}</p>}
+      {mainImage && <Image src={mainImageUrl(mainImage)} width={800} height={800} alt={mainImage?.alt || "Descriptive text for image"} className="bg-gray-50 object-cover rounded-2xl aspect-video mt-10 mb-10" />}
       <PortableText
         value={content}
         components={{
@@ -61,6 +59,14 @@ const PortableTextComponents = ({ content, description, publishedAt, mainImage }
           },
         }}
       />
+      {author && 
+      <div className="flex gap-x-3 mt-10">
+        {updatedAt && <p className="text-gray-500 font-light">Last updated: {updatedDate} by</p>}
+        <Image src={author.image} width={75} height={75} alt={author?.alt || "Descriptive text for image"} className="bg-gray-50 object-cover rounded-full w-6 h-6" />
+        <p className="text-gray-500 font-light">{author.name} </p>
+      </div>
+      }
+      <hr className="h-px mt-6 bg-gray-200 border-0 dark:bg-gray-300" />
     </>
   )
 }
