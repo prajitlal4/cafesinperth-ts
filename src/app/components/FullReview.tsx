@@ -7,7 +7,7 @@ import Link from 'next/link'
 export default async function FullReview( { review }: { review: any }) {
 
   const pathsArray = [
-    { name: 'Review', href: '/review', current: false },
+    { name: 'Review', href: `/review`, current: false },
     { name: review.title, href: `/review/${review.slug}`, current: true },
   ]
 
