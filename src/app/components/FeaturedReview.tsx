@@ -7,13 +7,13 @@ export default function FeaturedReview({review} : { review: FeaturedReviewPost})
   const publishedDate = format(new Date(review.publishedAt), "do LLLL yyyy");
 
   return (
-    <article className="flex flex-col items-start justify-between outline outline-2 outline-gray-200 rounded-2xl p-3">
+    <article className="flex flex-col items-start justify-between">
       <div className="relative w-full">
         <Image
           src={review.imageUrl}
           alt=""
-          height={400}
-          width={600}
+          height={300}
+          width={500}
           className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
         />
         <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />

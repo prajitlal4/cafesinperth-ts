@@ -46,10 +46,12 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
+              <Image
                 className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                src="https://cafesinperth.syd1.cdn.digitaloceanspaces.com/Capture.PNG"
                 alt=""
+                height={800}
+                width={800}
               />
             </Link>
             <button

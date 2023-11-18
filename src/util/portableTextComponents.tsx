@@ -18,7 +18,7 @@ const PortableTextComponents = ({ content, description, publishedAt, mainImage, 
     <>
       {description && <p className="mb-4 mt-3 text-md lg:text-lg leading-7 text-gray-900">{description}</p>}
       {publishedAt && <p className="text-gray-500 font-light">{publishedDate}</p>}
-      {mainImage && <Image src={mainImageUrl(mainImage)} width={800} height={800} alt={mainImage?.alt || "Descriptive text for image"} className="bg-gray-50 object-cover rounded-2xl aspect-video mt-10 mb-10" />}
+      {mainImage && <Image src={mainImageUrl(mainImage)} width={1200} height={1000} alt={mainImage?.alt || "Descriptive text for image"} className="bg-gray-50 object-cover rounded-2xl aspect-video mt-5 mb-10" />}
       <PortableText
         value={content}
         components={{
@@ -32,12 +32,12 @@ const PortableTextComponents = ({ content, description, publishedAt, mainImage, 
                   <Image
                     src={builder
                       .image(value.asset._ref)
-                      .width(800)
+                      .width(1920)
                       .format("webp")
-                      .height(800)
+                      .height(1080)
                       .url()}
-                    width={800}
-                    height={800}
+                    width={1920}
+                    height={1080}
                     alt={value?.alt || "Descriptive text for image"} // Ensure alt text is descriptive for SEO
                     className="bg-gray-50 object-cover rounded-2xl aspect-video" // 'aspect-video' removed since width and height are set
                   />
