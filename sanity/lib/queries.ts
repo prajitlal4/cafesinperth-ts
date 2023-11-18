@@ -22,6 +22,22 @@ export const getTopThreePosts = groq`*[_type == "post"] | order(_createdAt desc)
   "publishedAt": publishedAt,
 }`;
 
+export const getAllPosts = groq`*[_type == "post"] | order(_createdAt desc) {
+  "slug": slug.current,
+  title,
+  author->{
+    name,
+    "image": image.asset->url
+  },
+  location,
+  description,
+  categories[]->{
+    title
+  },
+  "imageUrl": mainImage.asset->url,
+  "publishedAt": publishedAt,
+}`;
+
 // getting single review
 export const getReview = groq`*[_type == "post" && slug.current == $slug][0] {
   "slug": slug.current,

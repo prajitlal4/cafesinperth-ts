@@ -15,8 +15,6 @@ export default async function FullReview( { review }: { review: any }) {
   const next = nextPrevious.nextPost;
   const prev = nextPrevious.prevPost;
 
-  console.log(nextPrevious)
-
   return (
     <div className="px-6 py-8 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
