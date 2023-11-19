@@ -4,7 +4,7 @@ import { getReview, getAllPaths, getTopThreePosts, getSiteMapInfo, getNextPrevPo
 export const client = createClient({
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  useCdn: process.env.NODE_ENV === "production",
+  useCdn: false,
   apiVersion: "2021-03-25",
 });
 
