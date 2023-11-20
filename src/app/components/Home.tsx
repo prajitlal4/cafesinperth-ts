@@ -16,17 +16,17 @@ export default function HomeComponent() {
         />
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center  py-5 mx-3 rounded-2xl bg-opacity-80">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl px-3 py-2 drop-shadow-2xl bg-black bg-opacity-60 rounded-2xl">
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl px-3 py-2 drop-shadow-2xl bg-black bg-opacity-75 rounded-2xl">
               Your one source of truth for the best Cafes in Perth.
             </h1>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
                 href={`/review`}
-                className="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="flex-none rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white bg-opacity-75 shadow-sm hover:bg-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 View Cafes <span aria-hidden="true">→</span>
               </Link>
-              <Link href={`#subscribe`} className="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+              <Link href={`#subscribe`} className="flex-none rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white bg-opacity-75 shadow-sm hover:bg-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
                 Stay up to date! <span aria-hidden="true">→</span>
               </Link>
             </div>
