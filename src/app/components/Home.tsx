@@ -12,6 +12,7 @@ export default function HomeComponent() {
               height={1080}
               alt=""
               className="absolute inset-0 -z-10 h-full w-full object-cover"
+              priority
         />
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center  py-5 mx-3 rounded-2xl bg-opacity-80">
