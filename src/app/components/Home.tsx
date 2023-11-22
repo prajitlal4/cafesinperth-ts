@@ -18,10 +18,10 @@ export default function HomeComponent() {
                 href={`/review`}
                 className="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-black bg-opacity-75 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
               >
-                View Cafes <span aria-hidden="true">→</span>
+                View Cafes
               </Link>
               <Link href={`#subscribe`} className="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-black bg-opacity-75 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
-                Stay up to date! <span aria-hidden="true">→</span>
+                Stay up to date!
               </Link>
             </div>
           </div>
