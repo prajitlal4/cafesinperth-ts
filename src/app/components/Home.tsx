@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
 
 export default function HomeComponent() {
-
   return (
     <div className="">
       <div className="relative isolate overflow-hidden pt-14">
@@ -20,7 +19,10 @@ export default function HomeComponent() {
               >
                 View Cafes
               </Link>
-              <Link href={`#subscribe`} className="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-black bg-opacity-75 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
+              <Link
+                href={`#subscribe`}
+                className="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-black bg-opacity-75 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+              >
                 Stay up to date!
               </Link>
             </div>
@@ -28,5 +30,5 @@ export default function HomeComponent() {
         </div>
       </div>
     </div>
-  )
+  );
 }

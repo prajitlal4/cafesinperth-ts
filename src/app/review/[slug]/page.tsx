@@ -5,7 +5,6 @@ import Footer from "@/app/components/Footer";
 import { Metadata } from "next";
 import Subscribe from "@/app/components/Subscribe";
 
-
 export async function generateStaticParams() {
   const reviewSlugs = await fetchReviewsPath();
 
@@ -16,18 +15,24 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string }}): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   const review = await fetchReview(params.slug);
   return {
     title: review.seoTitle ?? "Cafe Review",
-    description: review.seoDescription ?? "Review of a Cafe in Perth, Western Australia"
+    description:
+      review.seoDescription ?? "Review of a Cafe in Perth, Western Australia",
   };
 }
 
-export default async function Review({ params }: { params: { slug: string }}) {
+export default async function Review({ params }: { params: { slug: string } }) {
   const review = await fetchReview(params.slug);
   const title = "Love this article? Subscribe to our newsletter!";
-  const description ="Sign up to our weekly digests to help soothe your coffee cravings.";
+  const description =
+    "Sign up to our weekly digests to help soothe your coffee cravings.";
 
   return (
     <div>
@@ -36,7 +41,5 @@ export default async function Review({ params }: { params: { slug: string }}) {
       <Subscribe title={title} description={description} />
       <Footer />
     </div>
-  )
+  );
 }
-
-
