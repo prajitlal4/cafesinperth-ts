@@ -63,9 +63,11 @@ export default function FeaturedReview({
         </div>
         <div className="mt-3 flex items-center justify-between text-xs">
           <p className="text-gray-500 py-1.5 ">{publishedDate}</p>
-          <p className="relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-            {review.location}
-          </p>
+          {review.location && (
+            <p className="relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+              {review.location}
+            </p>
+          )}
         </div>
         <div className="group relative">
           <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
