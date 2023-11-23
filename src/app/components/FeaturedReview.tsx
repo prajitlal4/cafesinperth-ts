@@ -8,6 +8,7 @@ import { FaToilet } from "@react-icons/all-files/fa/FaToilet";
 import { FaDog } from "@react-icons/all-files/fa/FaDog";
 import { FaCoffee } from "@react-icons/all-files/fa/FaCoffee";
 import { FaUtensils } from "@react-icons/all-files/fa/FaUtensils";
+import { FaBaby } from "@react-icons/all-files/fa/FaBaby";
 
 export function chooseIcon(category: string) {
   switch (category) {
@@ -23,6 +24,8 @@ export function chooseIcon(category: string) {
       return <FaCoffee />;
     case "Food":
       return <FaUtensils />;
+    case "Kids Area":
+      return <FaBaby />;
     default:
       return null;
   }
