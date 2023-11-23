@@ -88,7 +88,7 @@ export default function FeaturedReview({
             width={40}
             className="h-10 w-10 rounded-full bg-gray-100"
           />
-          <div className="text-sm leading-6">
+          <div className="text-sm leading-6 font-medium">
             <p className=" text-gray-900">{review.author.name}</p>
           </div>
         </div>
