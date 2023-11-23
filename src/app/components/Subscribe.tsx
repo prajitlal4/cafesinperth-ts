@@ -1,4 +1,10 @@
-export default function Subscribe({title, description} : { title: string, description: string }) {
+export default function Subscribe({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
   return (
     <div className="bg-white sm:pt-8">
       <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -9,7 +15,13 @@ export default function Subscribe({title, description} : { title: string, descri
           <p className="mx-auto mt-2 max-w-xl text-center text-lg leading-8 text-gray-900">
             {description}
           </p>
-          <form name="subscribe" id="subscribe" className="mx-auto mt-10 flex max-w-md gap-x-4" method="POST" data-netlify="true">
+          <form
+            name="subscribe"
+            id="subscribe"
+            className="mx-auto mt-10 flex max-w-md gap-x-4"
+            method="POST"
+            data-netlify="true"
+          >
             <label htmlFor="email-address" className="sr-only">
               Email address
             </label>

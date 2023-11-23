@@ -81,5 +81,5 @@ export default function Example() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
