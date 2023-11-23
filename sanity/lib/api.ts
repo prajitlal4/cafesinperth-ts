@@ -16,7 +16,7 @@ export type FeaturedReviewPost = { //The review which gets displayed on the home
     image: string;
   };
   location: string;
-  categories: string[];
+  categories: any;
   imageUrl: string;
   publishedAt: string;
   description: string;

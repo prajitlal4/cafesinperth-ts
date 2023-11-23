@@ -9,6 +9,7 @@ import { FaDog } from "@react-icons/all-files/fa/FaDog";
 import { FaCoffee } from "@react-icons/all-files/fa/FaCoffee";
 import { FaUtensils } from "@react-icons/all-files/fa/FaUtensils";
 import { FaBaby } from "@react-icons/all-files/fa/FaBaby";
+import { Key } from "react";
 
 export function chooseIcon(category: string) {
   switch (category) {
@@ -52,14 +53,16 @@ export default function FeaturedReview({
       </div>
       <div className="max-w-xl">
         <div className="grid grid-cols-6 gap-3 mt-4">
-          {review.categories.map((category, index) => (
-            <span
-              key={index}
-              className="relative inline-flex justify-center items-center py-2 rounded-full text-md font-medium bg-gray-100 text-gray-800"
-            >
-              {chooseIcon(category.title)}
-            </span>
-          ))}
+          {review.categories.map(
+            (category: { title: string }, index: Key | null | undefined) => (
+              <span
+                key={index}
+                className="relative inline-flex justify-center items-center py-2 rounded-full text-md font-medium bg-gray-100 text-gray-800"
+              >
+                {chooseIcon(category.title)}
+              </span>
+            )
+          )}
         </div>
         <div className="mt-3 flex items-center justify-between text-xs">
           <p className="text-gray-500 py-1.5 ">{publishedDate}</p>
