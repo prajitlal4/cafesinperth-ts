@@ -40,7 +40,7 @@ export default function FeaturedReview({
   const publishedDate = format(new Date(review.publishedAt), "do LLLL yyyy");
 
   return (
-    <article className="flex flex-col items-start justify-between">
+    <article className="flex flex-col ">
       <div className="relative w-full">
         <Image
           src={review.imageUrl}
@@ -52,12 +52,12 @@ export default function FeaturedReview({
         <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
       </div>
       <div className="max-w-xl">
-        <div className="grid grid-cols-6 gap-3 mt-4">
+        <div className="grid grid-cols-8 gap-3 mt-3">
           {review.categories.map(
             (category: { title: string }, index: Key | null | undefined) => (
               <span
                 key={index}
-                className="relative inline-flex justify-center items-center py-2 rounded-full text-md font-medium bg-gray-100 text-gray-800"
+                className="relative inline-flex justify-center items-center py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-800"
               >
                 {chooseIcon(category.title)}
               </span>
