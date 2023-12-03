@@ -8,9 +8,9 @@ import { Key } from "react";
 const imageUrl = (mainImage: any) => {
   return builder
     .image(mainImage.asset._ref)
-    .width(800)
+    .width(1800)
     .format("webp")
-    .height(800)
+    .height(1800)
     .url();
 };
 
